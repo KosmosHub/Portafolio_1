@@ -104,3 +104,47 @@ body {
 .btn-link:hover {
   text-decoration: underline;
 }
+
+/* ==========================
+   🧠 Habilidades
+========================== */
+.skills {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #111;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--morado);
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  padding: 0;
+  list-style: none;
+  justify-items: center;
+}
+
+.skill-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--blanco);
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.skill-grid li:hover {
+  transform: scale(1.1);
+  color: var(--dorado);
+}
+
+.skill-grid img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
