@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proyectos | KosmosTM</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis Proyectos | Richard Muñoz</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-<header class="navbar">
-  <a href="index.html" class="logo">To<span>.</span></a>
+
+ <header class="navbar">
+  <a href="index.html" class="logo">RM<span>.</span></a>
   <nav id="nav-menu">
     <a href="about.html">Sobre mí</a>
     <a href="projects.html">Proyectos</a>
@@ -17,24 +18,40 @@
   </nav>
 </header>
 
-<section class="projects">
-  <h1>Proyectos Destacados</h1>
-  <div class="card-grid">
-    <article class="card">
-      <img src="assets/img/projects/inventario.png" alt="Inventario Node">
-      <div class="card-body">
-        <h3>Sistema Inventario Node</h3>
-        <p>Aplicación full‑stack en Node.js, Express, SQLite y JWT.</p>
-        <a href="https://github.com/Tomasito/inventario-node" target="_blank" rel="noopener" class="btn-secondary">Código</a>
-      </div>
-    </article>
-    <!-- Añade más tarjetas aquí -->
-  </div>
-</section>
 
-<footer>
-  © 2025 KosmosTM
-</footer>
-<script src="assets/js/main.js" defer></script>
+  <main class="projects-page">
+    <h1>Mis Proyectos</h1>
+
+    <section class="projects-grid">
+      
+      <!-- Proyecto 1: High -->
+      <article class="project-card" id="high">
+        <img src="assets/img/projects/high.png" alt="Sistema High" />
+        <h2>Sistema de Ventas High</h2>
+        <p>
+          Proyecto en C# con Windows Forms y Entity Framework. Incluye login de usuarios, gestión de clientes, productos y ventas. Desarrollado para una tienda de ropa urbana.
+        </p>
+        <a href="#" class="btn-secondary">Ver más</a>
+      </article>
+
+      <!-- Proyecto 2: Blog -->
+      <article class="project-card" id="blog">
+        <img src="assets/img/projects/blog-personal.png" alt="Blog Personal" />
+        <h2>Blog Personal</h2>
+        <p>
+          Sitio web realizado en HTML, CSS y JavaScript puro. Contiene un portafolio visual, blog, y formulario de contacto con diseño oscuro, morado y dorado.
+        </p>
+        <a href="#" class="btn-secondary">Ver más</a>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Richard Muñoz · 
+    <a href="https://github.com/tuusuario">GitHub</a> · 
+    <a href="https://www.linkedin.com/in/tuusuario">LinkedIn</a>
+  </footer>
+
 </body>
 </html>
