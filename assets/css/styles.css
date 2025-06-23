@@ -27,37 +27,98 @@ body {
 /* ==========================
    ✨ Sección Hero
 ========================== */
+/* 🎯 Sección principal "Hero" */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 5rem 1rem;
-  background-color: var(--negro);
+  display: flex; /* Usamos flexbox para alinear elementos */
+  flex-direction: column; /* Alineamos en columna (de arriba a abajo) */
+  align-items: center; /* Centramos horizontalmente */
+  justify-content: center; /* Centramos verticalmente */
+  text-align: center; /* Centramos texto */
+  padding: 5rem 1rem; /* Espaciado interno (arriba/abajo y costados) */
+  background-color: var(--negro); /* Fondo oscuro según paleta */
 }
 
+/* 🌀 Animación flotante del GIF */
+.hero-gif {
+  width: 400px; /* Tamaño del GIF */
+  height: auto; /* Mantiene proporción */
+  margin-bottom: 1rem; /* Espacio debajo del gif */
+  filter: drop-shadow(0 0 6px var(--morado)); /* Sombra con tono morado */
+  animation: flotar 3s ease-in-out infinite; /* Animación de flotación infinita */
+}
+
+/* 🔁 Keyframes de animación del GIF */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); } /* Sube 10px en el medio del ciclo */
+}
+
+/* 📝 Título principal del hero */
 .hero h1 {
-  font-size: 3rem;
-  color: var(--blanco);
+  font-size: 3rem; /* Tamaño grande */
+  color: var(--blanco); /* Color blanco */
+  margin: 0.5rem 0; /* Espacio arriba y abajo */
 }
 
+/* 🌈 Parte del nombre destacado */
 .hero h1 span {
+  color: var(--morado); /* Color morado para destacar */
+}
+
+/* 📄 Párrafo descriptivo */
+.hero p {
+  font-size: 1.2rem; /* Tamaño de texto más grande que el normal */
+  margin-top: 1rem;
+  color: var(--gris-suave); /* Gris claro para contraste */
+  max-width: 700px; /* Ancho máximo para que no se vea demasiado extendido */
+}
+
+/* 🎯 Contenedor de los botones */
+.hero-buttons {
+  margin-top: 2rem; /* Espacio arriba de los botones */
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen si no caben */
+  gap: 1rem; /* Espacio entre botones */
+  justify-content: center; /* Centra los botones */
+}
+
+/* 🧩 Estilos base de todos los botones */
+.btn-primary,
+.btn-secondary,
+.btn-link {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease; /* Suaviza las animaciones */
+}
+
+/* 💜 Botón principal (CV) */
+.btn-primary {
+  background-color: var(--morado); /* Fondo morado */
+  color: #fff; /* Texto blanco */
+}
+
+/* 💛 Botón secundario (proyecto) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--dorado); /* Texto dorado */
+  border: 2px solid var(--dorado); /* Borde dorado */
+}
+
+/* 🔗 Enlaces simples con animación sutil */
+.btn-link {
+  background-color: transparent;
+  color: var(--gris-suave);
+  border-bottom: 1px solid transparent;
+}
+
+/* 🪄 Hover del botón link */
+.btn-link:hover {
+  border-bottom: 1px solid var(--morado);
   color: var(--morado);
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: var(--gris-suave);
-}
-
-.hero-buttons {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
 
 /* ==========================
    🎯 Botones
