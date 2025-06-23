@@ -260,51 +260,88 @@ body {
   align-self: center;
 }
 /* ==========================
-   🧭 Barra de Navegación con Logo
+   🧭 Navbar Centrado Refinado
 ========================== */
-.navbar {
-  background-color: #1a1a1a;
+.navbar-center {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  padding: 1.2rem 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 48px;
-  width: auto;
-  filter: drop-shadow(0 0 5px var(--morado));
-}
-
-/* NAV LINKS */
-#nav-menu {
-  display: flex;
   gap: 1.5rem;
 }
 
-#nav-menu a {
+/* Partes laterales */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 2rem; /* más espacio entre enlaces */
+}
+
+/* Logo centrado visualmente */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.logo img {
+  height: 65px; /* más alto y proporcional al texto del nav */
+  width: auto;
+  filter: drop-shadow(0 0 5px var(--morado));
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================
+   🌐 Enlaces del Menú refinados
+========================== */
+.nav-left a,
+.nav-right a {
+  position: relative;
   text-decoration: none;
   color: var(--gris-suave);
   font-weight: 500;
-  transition: color 0.3s, transform 0.2s;
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-#nav-menu a:hover {
+/* Línea dorada animada al hover */
+.nav-left a::after,
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--dorado);
+  transition: width 0.3s ease;
+}
+
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
   color: var(--dorado);
   transform: scale(1.05);
 }
 
-/* Página activa en morado */
-#nav-menu .active {
+/* Enlace activo */
+.nav-left .active,
+.nav-right .active {
   color: var(--morado);
   font-weight: bold;
 }
