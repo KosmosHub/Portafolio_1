@@ -259,3 +259,52 @@ body {
   margin-top: auto;
   align-self: center;
 }
+/* ==========================
+   🧭 Barra de Navegación
+========================== */
+.navbar {
+  background-color: #1a1a1a;
+  color: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--dorado);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--morado);
+}
+
+#nav-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+#nav-menu a {
+  text-decoration: none;
+  color: var(--gris-suave);
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+#nav-menu a:hover {
+  color: var(--dorado);
+  transform: scale(1.05);
+}
+
+/* Para resaltar la página activa */
+#nav-menu .active {
+  color: var(--morado);
+  font-weight: bold;
+}
