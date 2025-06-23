@@ -260,11 +260,10 @@ body {
   align-self: center;
 }
 /* ==========================
-   🧭 Barra de Navegación
+   🧭 Barra de Navegación con Logo
 ========================== */
 .navbar {
   background-color: #1a1a1a;
-  color: var(--blanco);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -276,16 +275,17 @@ body {
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--dorado);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
-.logo span {
-  color: var(--morado);
+.logo img {
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(0 0 5px var(--morado));
 }
 
+/* NAV LINKS */
 #nav-menu {
   display: flex;
   gap: 1.5rem;
@@ -303,7 +303,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Para resaltar la página activa */
+/* Página activa en morado */
 #nav-menu .active {
   color: var(--morado);
   font-weight: bold;
