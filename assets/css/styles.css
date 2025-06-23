@@ -259,6 +259,13 @@ body {
   margin-top: auto;
   align-self: center;
 }
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
 /* ==========================
    🧭 Navbar Centrado Refinado
 ========================== */
