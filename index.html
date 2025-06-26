@@ -72,6 +72,27 @@
   </div>
 </section>
 
+<section id="contacto" class="contact">
+  <h2>Contacto</h2>
+  <form id="contact-form" action="https://formspree.io/f/mrbkowdo" method="POST">
+    <label>Nombre
+      <input type="text" name="nombre" required>
+    </label>
+
+    <label>Correo electrónico
+      <input type="email" name="email" required>
+    </label>
+
+    <label>Mensaje
+      <textarea name="mensaje" rows="4" required></textarea>
+    </label>
+
+    <button type="submit" class="btn-primary">Enviar</button>
+    <p class="success" id="successMsg"></p>
+  </form>
+</section>
+
+
 <footer>
   <div class="footer-text">
     © 2025 Richard Muñoz

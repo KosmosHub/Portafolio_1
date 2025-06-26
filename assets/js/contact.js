@@ -1,47 +1,26 @@
-const form = document.getElementById('contact-form');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const msg = document.getElementById("successMsg");
 
-if (form) {
-    const nombre = document.getElementById('nombre');
-    const correo = document.getElementById('correo');
-    const mensaje = document.getElementById('mensaje');
-    const successMsg = document.getElementById('successMsg');
-    const emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        limpiar();
-        let ok = true;
+    const data = new FormData(form);
 
-        if (!nombre.value.trim()) {
-            error('errorNombre', 'Por favor ingresa tu nombre');
-            ok = false;
-        }
-
-        if (!correo.value.trim()) {
-            error('errorCorreo', 'Ingresa un correo');
-            ok = false;
-        } else if (!emailRegex.test(correo.value)) {
-            error('errorCorreo', 'Formato de correo no válido');
-            ok = false;
-        }
-
-        if (!mensaje.value.trim()) {
-            error('errorMensaje', 'El mensaje no puede estar vacío');
-            ok = false;
-        }
-
-        if (ok) {
-            successMsg.textContent = '¡Gracias por contactarme! Responderé pronto.';
-            form.reset();
-        }
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
     });
 
-    function error(id, msg) {
-        document.getElementById(id).textContent = msg;
+    if (response.ok) {
+      msg.textContent = "¡Mensaje enviado con éxito!";
+      form.reset();
+      setTimeout(() => (msg.textContent = ""), 5000);
+    } else {
+      msg.textContent = "Ups, ocurrió un error. Intenta nuevamente.";
     }
-
-    function limpiar() {
-        ['errorNombre', 'errorCorreo', 'errorMensaje'].forEach(id => document.getElementById(id).textContent = '');
-        successMsg.textContent = '';
-    }
-}
+  });
+});
