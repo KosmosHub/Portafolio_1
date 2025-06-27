@@ -627,3 +627,37 @@ footer {
 .container li:hover {
   background-color: #292929;
 }
+/* ==========================
+   🌙 Modo Oscuro
+========================== */
+.dark-mode {
+  --negro: #f2f2f2;
+  --blanco: #0f0f0f;
+  --morado: #7c3aed;
+  --gris-suave: #444;
+  --dorado: #d4af37;
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+.dark-mode body {
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+.dark-mode .navbar,
+.dark-mode footer,
+.dark-mode .project-card,
+.dark-mode .container {
+  background-color: var(--blanco);
+  color: var(--negro);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode a {
+  color: var(--morado);
+}
+
+.dark-mode a:hover {
+  color: var(--dorado);
+}
