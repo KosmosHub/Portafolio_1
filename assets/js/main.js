@@ -1,19 +1,23 @@
+const btnToggle = document.getElementById("modoOscuroToggle");
+const imgIcono = document.getElementById("iconoModo");
 
-  const btnToggle = document.getElementById("modoOscuroToggle");
-  const imgIcono = document.getElementById("iconoModo");
-
-  // 1. Al cargar la página, aplicamos el modo guardado
-  const modoGuardado = localStorage.getItem("modoOscuro");
-  if (modoGuardado === "true") {
-    document.documentElement.classList.add("dark-mode");
-    imgIcono.src = "assets/img/sol.png";
+// ✅ 1. Al cargar la página, aplicamos el modo guardado
+const modoGuardado = localStorage.getItem("modoOscuro");
+if (modoGuardado === "true") {
+  document.documentElement.classList.add("dark-mode");
+  if (imgIcono) {
+    imgIcono.src = "assets/img/sol.png"; // 🌞
     imgIcono.alt = "Cambiar a modo claro";
-  } else {
-    imgIcono.src = "assets/img/luna.png";
+  }
+} else {
+  if (imgIcono) {
+    imgIcono.src = "assets/img/luna.png"; // 🌙
     imgIcono.alt = "Cambiar a modo oscuro";
   }
+}
 
-  // 2. Evento de clic para alternar
+// ✅ 2. Evento de clic para alternar modo
+if (btnToggle && imgIcono) {
   btnToggle.addEventListener("click", () => {
     const esModoOscuro = document.documentElement.classList.toggle("dark-mode");
 
@@ -25,8 +29,7 @@
       imgIcono.alt = "Cambiar a modo oscuro";
     }
 
-    // 3. Guardamos la preferencia
+    // ✅ 3. Guardamos la preferencia
     localStorage.setItem("modoOscuro", esModoOscuro);
   });
-
-
+}
