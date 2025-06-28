@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mis Proyectos | Richard Muñoz</title>
+  <script>
+  // Aplica dark-mode inmediatamente según la preferencia guardada
+  (function() {
+    const modoGuardado = localStorage.getItem("modoOscuro");
+    if (modoGuardado === "true") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>

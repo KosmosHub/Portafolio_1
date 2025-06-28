@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richard Muñoz | Blog Personal</title>
+  <script>
+  // Aplica dark-mode inmediatamente según la preferencia guardada
+  (function() {
+    const modoGuardado = localStorage.getItem("modoOscuro");
+    if (modoGuardado === "true") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -35,7 +44,7 @@
  <!-- <img src="assets/img/animacion.gif" alt="Animación" class="hero-gif" /> -->
 
   <h1>Hola, soy <span>Richard Muñoz</span></h1>
-  <p>Estudiante de Analista Programador con Java, JavaScript, .NET y Python, HTML, CSS y SQL.</p>
+  <p>Tecnico - Analista Programador con Java, JavaScript, .NET y Python, HTML, CSS y SQL.</p>
   
   <div class="hero-buttons">
     <a href="assets/pdf/CV Richard Muñoz.pdf" class="btn-primary" download>Descargar CV</a>
