@@ -1,134 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Richard Muñoz | Blog Personal</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script>
-  // Aplica dark-mode inmediatamente según la preferencia guardada
-  (function() {
-    const modoGuardado = localStorage.getItem("modoOscuro");
-    if (modoGuardado === "true") {
-      document.documentElement.classList.add("dark-mode");
-    }
-  })();
-</script>
-  <link rel="stylesheet" href="assets/css/styles.css">
+    // Aplica dark-mode al cargar si está activado
+    (function () {
+      const modoGuardado = localStorage.getItem("modoOscuro");
+      if (modoGuardado === "true") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
 </head>
-
-<header class="navbar navbar-center">
-  <div class="nav-left">
-    <a href="about.html">Sobre mí</a>
-    <a href="projects.html">Proyectos</a>
-  </div>
-
-  <a href="index.html" class="logo">
-    <img src="assets/img/logoblog.png" alt="Logo del blog" />
-  </a>
-  <button id="modoOscuroToggle" class="modo-toggle">
-  <img id="iconoModo" src="assets/img/luna.png" alt="Modo oscuro" />
-  </button>
-  <div class="nav-right">
-    <a href="blog.html">Blog</a>
-    <a href="index.html#contacto">Contacto</a>
-  </div>
-    
-</header>
-  
-
-
 <body>
 
-  <section class="hero">
-  <div class="hero-text">
- <!-- <img src="assets/img/animacion.gif" alt="Animación" class="hero-gif" /> -->
-
-  <h1>Hola, soy <span>Richard Muñoz</span></h1>
-  <p>Tecnico - Analista Programador con Java, JavaScript, .NET y Python, HTML, CSS y SQL.</p>
-  
-  <div class="hero-buttons">
-    <a href="assets/pdf/CV Richard Muñoz.pdf" class="btn-primary" download>Descargar CV</a>
-    <a href="projects.html#proyecto1" class="btn-secondary">Ver Proyecto</a>
-    <a href="#contacto" class="btn-link">Contacto</a>
-    <a href="blog.html" class="btn-link">Ir al Blog</a>
-  </div>
-</div>
-
-</section>
-
-<section class="skills">
-  <h2>Habilidades</h2>
-  <ul class="skill-grid">
-    <li><img src="assets/img/icons/html.svg" alt="HTML">HTML5</li>
-    <li><img src="assets/img/icons/css.svg" alt="CSS">CSS3</li>
-    <li><img src="assets/img/icons/js.svg" alt="JavaScript">JavaScript</li>
-    <li><img src="assets/img/icons/java.svg" alt="Java">Java</li>
-    <li><img src="assets/img/icons/csharp.svg" alt="C#">C#</li>
-    <li><img src="assets/img/icons/net.svg" alt=".NET">.NET</li>
-    <li><img src="assets/img/icons/python.svg" alt="Python">Python</li>
-    <li><img src="assets/img/icons/sql.svg" alt="SQL">SQL</li>
-    <li><img src="assets/img/icons/drawio.svg" alt="Draw.io">Draw.io</li>
-  </ul>
-</section>
-
-<section class="projects-destacados">
-  <h2>Proyecto Destacado</h2>
-
-  <div class="proyecto">
-    <img src="assets/img/logohigh.png" alt="Captura del proyecto" class="proyecto-img">
-
-    <div class="proyecto-info">
-      <h3>Sistema Tienda HIGH</h3>
-      <p>Un proyecto de sistema de tienda con diferentes tipos de menus segun la persona que ingresaba. Hecho en Visual Studio comunity 2022, con C# windows Form .Net .</p>
-      <a href="projects.html#proyecto1" class="btn-primary">Ver más</a>
+  <!-- 🧭 NAVBAR -->
+  <header class="navbar navbar-center">
+    <div class="nav-left desktop-only">
+      <a href="about.html">Sobre mí</a>
+      <a href="projects.html">Proyectos</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contacto">Contacto</a>
     </div>
-  </div>
-</section>
 
-<section id="contacto" class="contact">
-  <h2>Contacto</h2>
-  <form id="contact-form" action="https://formspree.io/f/mrbkowdo" method="POST">
-    <label>Nombre
-      <input type="text" name="nombre" required>
-    </label>
+    <div class="nav-left mobile-only">
+      <button id="modoOscuroToggle" class="modo-toggle" aria-label="Modo Oscuro">
+        <img id="iconoModo" src="assets/img/luna.png" alt="Modo oscuro" />
+      </button>
+    </div>
 
-    <label>Correo electrónico
-      <input type="email" name="email" required>
-    </label>
-
-    <label>Mensaje
-      <textarea name="mensaje" rows="4" required></textarea>
-    </label>
-
-    <button type="submit" class="btn-primary">Enviar</button>
-    <p class="success" id="successMsg"></p>
-  </form>
-</section>
-
-
-<footer>
-  <div class="footer-text">
-    © 2025 Richard Muñoz
-  </div>
-
-  <div class="footer-icons">
-    <a href="https://github.com/KosmosHub/WindowsFormsTienda_High" target="_blank" aria-label="GitHub">
-      <img src="assets/img/footer/github.svg" alt="GitHub" class="footer-icon" />
+    <a href="index.html" class="logo">
+      <img src="assets/img/logoblog.png" alt="Logo del blog" />
     </a>
 
-    <a href="https://www.linkedin.com/in/rxr-mf/" target="_blank" aria-label="LinkedIn">
-      <img src="assets/img/footer/linkedin.svg" alt="LinkedIn" class="footer-icon" />
-    </a>
+    <div class="nav-right mobile-only">
+      <button id="hamburger" class="hamburger-menu" aria-label="Menú móvil">
+        ☰
+      </button>
+    </div>
 
-    <a href="https://www.instagram.com/paranoid_ssj" target="_blank" aria-label="Instagram">
-      <img src="assets/img/footer/instagram.svg" alt="Instagram" class="footer-icon" />
-    </a>
-  </div>
-</footer>
-<script src="assets/js/contact.js" defer></script>
-<script src="assets/js/main.js" defer></script>
+    <div class="nav-right desktop-only">
+      <button id="modoOscuroToggle" class="modo-toggle" aria-label="Modo Oscuro">
+        <img id="iconoModo" src="assets/img/luna.png" alt="Modo oscuro" />
+      </button>
+    </div>
+  </header>
 
+  <!-- Menú desplegable móvil -->
+  <nav id="nav-menu" class="mobile-only">
+    <a href="about.html">Sobre mí</a>
+    <a href="projects.html">Proyectos</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
 
+  <!-- ✨ Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hola, soy <span>Richard Muñoz</span></h1>
+      <p>Técnico - Analista Programador con Java, JavaScript, .NET, Python, HTML, CSS y SQL.</p>
+      <div class="hero-buttons">
+        <a href="assets/pdf/CV Richard Muñoz.pdf" class="btn-primary" download>Descargar CV</a>
+        <a href="projects.html#proyecto1" class="btn-secondary">Ver Proyecto</a>
+        <a href="#contacto" class="btn-link">Contacto</a>
+        <a href="blog.html" class="btn-link">Ir al Blog</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- 🛠️ Skills -->
+  <section class="skills">
+    <h2>Habilidades</h2>
+    <ul class="skill-grid">
+      <li><img src="assets/img/icons/html.svg" alt="HTML">HTML5</li>
+      <li><img src="assets/img/icons/css.svg" alt="CSS">CSS3</li>
+      <li><img src="assets/img/icons/js.svg" alt="JavaScript">JavaScript</li>
+      <li><img src="assets/img/icons/java.svg" alt="Java">Java</li>
+      <li><img src="assets/img/icons/csharp.svg" alt="C#">C#</li>
+      <li><img src="assets/img/icons/net.svg" alt=".NET">.NET</li>
+      <li><img src="assets/img/icons/python.svg" alt="Python">Python</li>
+      <li><img src="assets/img/icons/sql.svg" alt="SQL">SQL</li>
+      <li><img src="assets/img/icons/drawio.svg" alt="Draw.io">Draw.io</li>
+    </ul>
+  </section>
+
+  <!-- 💼 Proyecto destacado -->
+  <section class="projects-destacados">
+    <h2>Proyecto Destacado</h2>
+    <div class="proyecto">
+      <img src="assets/img/logohigh.png" alt="Proyecto HIGH" class="proyecto-img" />
+      <div class="proyecto-info">
+        <h3>Sistema Tienda HIGH</h3>
+        <p>Proyecto con diferentes menús por rol. Hecho en Visual Studio 2022 con C# Windows Forms .NET.</p>
+        <a href="projects.html#proyecto1" class="btn-primary">Ver más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📩 Contacto -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <form id="contact-form" action="https://formspree.io/f/mrbkowdo" method="POST">
+      <label>Nombre
+        <input type="text" name="nombre" required />
+      </label>
+      <label>Correo electrónico
+        <input type="email" name="email" required />
+      </label>
+      <label>Mensaje
+        <textarea name="mensaje" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Enviar</button>
+      <p class="success" id="successMsg"></p>
+    </form>
+  </section>
+
+  <!-- 👣 Footer -->
+  <footer>
+    <div class="footer-text">© 2025 Richard Muñoz</div>
+    <div class="footer-icons">
+      <a href="https://github.com/KosmosHub/WindowsFormsTienda_High" target="_blank"><img src="assets/img/footer/github.svg" alt="GitHub" /></a>
+      <a href="https://www.linkedin.com/in/rxr-mf/" target="_blank"><img src="assets/img/footer/linkedin.svg" alt="LinkedIn" /></a>
+      <a href="https://www.instagram.com/paranoid_ssj" target="_blank"><img src="assets/img/footer/instagram.svg" alt="Instagram" /></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const btnToggle = document.querySelectorAll("#modoOscuroToggle");
+    const iconoModo = document.getElementById("iconoModo");
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    // Alternar modo oscuro
+    btnToggle.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const esOscuro = document.documentElement.classList.toggle("dark-mode");
+        localStorage.setItem("modoOscuro", esOscuro);
+        if (iconoModo) {
+          iconoModo.src = esOscuro ? "assets/img/sol.png" : "assets/img/luna.png";
+          iconoModo.alt = esOscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
+        }
+      });
+    });
+
+    // Menú móvil
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+  <script src="assets/js/contact.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

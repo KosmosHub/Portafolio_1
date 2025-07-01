@@ -376,99 +376,146 @@ body {
 }
 
 /* ==========================
-   🧭 Navbar Centrado Refinado
+   🧭 Navbar Centrado Refinado
 ========================== */
 .navbar-center {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--gris-claro);
-  padding: 1.2rem 3rem;
-  box-shadow: 0 2px 10px rgba(85, 37, 131, 0.3);
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  gap: 1.5rem;
-  transition: background-color 0.4s ease;
+  box-shadow: 0 2px 10px rgba(85, 37, 131, 0.3);
+  gap: 1rem;
 }
 
-.logo {
+/* Ocultar/mostrar elementos según dispositivo */
+.desktop-only { display: flex; }
+.mobile-only { display: none; }
+
+/* En pantallas ≤768px */
+@media screen and (max-width: 768px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: flex; }
+}
+
+/* Nav izquierdo (desktop) */
+.nav-left {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
+  gap: 1.8rem;
 }
-
-.logo img {
-  height: 65px;
-  width: auto;
-  filter: drop-shadow(0 0 7px var(--morado));
-  transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-  transform: scale(1.07);
-}
-
-.nav-left,
-.nav-right {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-left a,
-.nav-right a {
-  position: relative;
+.nav-left a {
   text-decoration: none;
   color: var(--gris-oscuro);
   font-weight: 600;
-  font-size: 1.25rem;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease, transform 0.2s ease;
+  font-size: 1.15rem;
+  position: relative;
+  transition: color 0.3s ease;
 }
-
-.nav-left a::after,
-.nav-right a::after {
+.nav-left a::after {
   content: "";
   position: absolute;
   width: 0%;
   height: 2px;
   left: 0;
-  bottom: 0;
+  bottom: -4px;
   background-color: var(--dorado);
   transition: width 0.3s ease;
 }
+.nav-left a:hover::after { width: 100%; }
+.nav-left a:hover { color: var(--dorado); }
 
-.nav-left a:hover::after,
-.nav-right a:hover::after {
-  width: 100%;
+/* Logo centrado */
+.logo { flex: 1; display: flex; justify-content: center; }
+.logo img {
+  height: 65px;
+  filter: drop-shadow(0 0 7px var(--morado));
+  transition: transform 0.3s ease;
+}
+.logo img:hover { transform: scale(1.07); }
+
+/* Nav derecho */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.nav-left a:hover,
-.nav-right a:hover {
-  color: var(--dorado);
-  transform: scale(1.07);
-}
-
-.nav-left .active,
-.nav-right .active {
-  color: var(--morado);
-  font-weight: 800;
-}
-
-/* Botón de hamburguesa para móviles */
-.hamburger-menu {
-  display: none;
+/* Dark mode toggle */
+.modo-toggle {
+  background: none;
+  border: none;
   cursor: pointer;
-  font-size: 2rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.modo-toggle img {
+  height: 28px;
+  width: 28px;
+  filter: drop-shadow(0 0 3px var(--morado));
+  transition: filter 0.3s ease;
+}
+.modo-toggle:hover img {
+  filter: drop-shadow(0 0 6px var(--dorado));
+}
+
+/* Botón hamburguesa */
+.hamburger-menu {
+  background: none;
+  border: none;
+  font-size: 1.9rem;
+  cursor: pointer;
   color: var(--texto-principal);
-  z-index: 1001;
   transition: color 0.3s ease;
 }
+.hamburger-menu:hover { color: var(--dorado); }
 
-.hamburger-menu:hover {
-  color: var(--dorado);
+/* Menú móvil desplegable */
+#nav-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--gris-claro);
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  left: 0;
+  box-shadow: 0 4px 15px rgba(85, 37, 131, 0.25);
+  z-index: 999;
 }
+#nav-menu.show { display: flex; }
+#nav-menu a {
+  color: var(--gris-oscuro);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+#nav-menu a:hover {
+  color: var(--dorado);
+  border-bottom-color: var(--dorado);
+}
+/* ✅ OCULTAR el menú móvil y elementos mobile en escritorio */
+@media screen and (min-width: 769px) {
+  #nav-menu {
+    display: none !important; /* fuerza que no se muestre en escritorio */
+  }
+
+  .mobile-only {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: flex !important;
+  }
+}
+
 
 /* ==========================
    📬 Sección de Contacto
