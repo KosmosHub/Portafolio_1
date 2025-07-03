@@ -4,39 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sobre mí | Tomasito</title>
+  <script>
+  // Aplica dark-mode inmediatamente según la preferencia guardada
+  (function() {
+    const modoGuardado = localStorage.getItem("modoOscuro");
+    if (modoGuardado === "true") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<header class="navbar">
-  <a href="index.html" class="logo">To<span>.</span></a>
-  <nav id="nav-menu">
+<header class="navbar navbar-center">
+  <div class="nav-left">
     <a href="about.html">Sobre mí</a>
     <a href="projects.html">Proyectos</a>
+  </div>
+
+  <a href="index.html" class="logo">
+    <img src="assets/img/logoblog.png" alt="Logo del blog" />
+  </a>
+  <button id="modoOscuroToggle" class="modo-toggle">
+  <img id="iconoModo" src="assets/img/luna.png" alt="Modo oscuro" />
+  </button>
+  <div class="nav-right">
     <a href="blog.html">Blog</a>
     <a href="index.html#contacto">Contacto</a>
-  </nav>
+  </div>
+    
 </header>
+
+
 
 <main class="container">
   <h1>Sobre mí</h1>
-  <p>Soy un desarrollador web con pasión por crear soluciones elegantes y funcionales. Desde la concepción hasta la puesta en producción, disfruto cada etapa del ciclo de desarrollo.</p>
+  <p>
+    Soy una persona responsable y comprometida, con experiencia en atencion al cliente. Ademas, me he formado como analista Programador
+    adquiriendo conocimientos en programacion orientada a objetos, .NET, y gestion de base de datos.
+    Me interesa combinar mi experiencia opertiva y mis habilidades para aportar soluciones eficientes.
+
+  </p>
 
   <h2>Experiencia</h2>
   <ul>
-    <li><strong>Docente </strong> – Hogar (2024‑presente)</li>
-    <li><strong>Free </strong> – Universidad  (2023)</li>
+    <li>
+      <strong>Apoyo académico informal</strong>  Santo Tomas (2024‑presente)<br>
+    Ayuda a compañeros en lógica de programación, diagramas, y uso de herramientas como Draw.io, SQL Server o visual studio code.
+  </li>
+  <li>
+    <strong>Reponedor y atención al cliente</strong>  Local comercial (2021-2022)<br>
+    Organización de productos, atención directa al público y responsabilidad en horarios.
+  </li>
+  <li>
+    <strong>Salvavidas</strong>  Piscina Parque recreacional (temporada verano 2023-2024-2025)<br>
+    Supervisión de seguridad y respuesta rápida ante emergencias.
+  </li>
+  <li>
+    <strong>Operador panadería</strong>  Supermercado Santa Isabel (2018-2021)<br>
+    Apoyo en tareas operativas y trabajo bajo presión.
+    </li>
   </ul>
 
   <h2>Certificaciones</h2>
   <ul>
-    <li>PMP (en progreso)</li>
-    <li>Scrum Master (2024)</li>
+    <li>Salvataje(2025)</li>
+    <li>Primeros Auxilios (2025)</li>
   </ul>
 </main>
 
 <footer>
-  © 2025 KosmosTM
+  <div class="footer-text">
+    © 2025 Richard Muñoz
+  </div>
+
+  <div class="footer-icons">
+    <a href="https://github.com/KosmosHub/WindowsFormsTienda_High" target="_blank" aria-label="GitHub">
+      <img src="assets/img/footer/github.svg" alt="GitHub" class="footer-icon" />
+    </a>
+
+    <a href="https://www.linkedin.com/in/rxr-mf/" target="_blank" aria-label="LinkedIn">
+      <img src="assets/img/footer/linkedin.svg" alt="LinkedIn" class="footer-icon" />
+    </a>
+
+    <a href="https://www.instagram.com/paranoid_ssj" target="_blank" aria-label="Instagram">
+      <img src="assets/img/footer/instagram.svg" alt="Instagram" class="footer-icon" />
+    </a>
+  </div>
 </footer>
+
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

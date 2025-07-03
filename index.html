@@ -1,80 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio de desarrollador web – proyectos, habilidades y contacto.">
-  <title>Tomasito | Desarrollador Web</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richard Muñoz | Blog Personal</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script>
+    // Aplica dark-mode al cargar si está activado
+    (function () {
+      const modoGuardado = localStorage.getItem("modoOscuro");
+      if (modoGuardado === "true") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
 </head>
 <body>
-<header class="navbar">
-  <a href="index.html" class="logo">TM<span>.</span></a>
-  <nav id="nav-menu">
+
+  <!-- 🧭 NAVBAR -->
+  <header class="navbar navbar-center">
+    <div class="nav-left desktop-only">
+      <a href="about.html">Sobre mí</a>
+      <a href="projects.html">Proyectos</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+
+    <div class="nav-left mobile-only">
+      <button id="modoOscuroToggle" class="modo-toggle" aria-label="Modo Oscuro">
+        <img id="iconoModo" src="assets/img/luna.png" alt="Modo oscuro" />
+      </button>
+    </div>
+
+    <a href="index.html" class="logo">
+      <img src="assets/img/logoblog.png" alt="Logo del blog" />
+    </a>
+
+    <div class="nav-right mobile-only">
+      <button id="hamburger" class="hamburger-menu" aria-label="Menú móvil">
+        ☰
+      </button>
+    </div>
+
+    <div class="nav-right desktop-only">
+      <button id="modoOscuroToggle" class="modo-toggle" aria-label="Modo Oscuro">
+        <img id="iconoModo" src="assets/img/luna.png" alt="Modo oscuro" />
+      </button>
+    </div>
+  </header>
+
+  <!-- Menú desplegable móvil -->
+  <nav id="nav-menu" class="mobile-only">
     <a href="about.html">Sobre mí</a>
     <a href="projects.html">Proyectos</a>
     <a href="blog.html">Blog</a>
-    <a href="#contacto">Contacto</a>
-    <button id="dark-toggle" aria-label="Alternar modo oscuro">🌓</button>
+    <a href="index.html#contacto">Contacto</a>
   </nav>
-  <button id="hamburger" aria-label="Menú móvil">☰</button>
-</header>
 
-<section class="hero">
-  <img src="assets/img/hero.webp" alt="Imagen destacada de código">
-  <div class="hero-text">
-    <h1>¡Hola!, soy <span>Tomasito</span></h1>
-    <p>Ingeniero en Computación especializado en JavaScript, Node y IA.</p>
-    <a href="assets/RichardCV.pdf" class="btn-primary" download>Descargar CV</a>
-  </div>
-</section>
+  <!-- ✨ Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hola, soy <span>Richard Muñoz</span></h1>
+      <p>Técnico - Analista Programador con Java, JavaScript, .NET, Python, HTML, CSS y SQL.</p>
+      <div class="hero-buttons">
+        <a href="assets/pdf/CV Richard Muñoz.pdf" class="btn-primary" download>Descargar CV</a>
+        <a href="projects.html#proyecto1" class="btn-secondary">Ver Proyecto</a>
+        <a href="#contacto" class="btn-link">Contacto</a>
+        <a href="blog.html" class="btn-link">Ir al Blog</a>
+      </div>
+    </div>
+  </section>
 
-<section class="skills">
-  <h2>Habilidades</h2>
-  <ul class="skill-grid">
-    <li><img src="assets/img/icons/html.svg" alt="">HTML5</li>
-    <li><img src="assets/img/icons/css.svg"  alt="">CSS3</li>
-    <li><img src="assets/img/icons/js.svg"   alt="">JavaScript</li>
-    <li><img src="assets/img/icons/node.svg" alt="">Node.js</li>
-    <li><img src="assets/img/icons/react.svg"alt="">React</li>
-    <li><img src="assets/img/icons/sqlite.svg"alt="">SQLite</li>
-  </ul>
-</section>
+  <!-- 🛠️ Skills -->
+  <section class="skills">
+    <h2>Habilidades</h2>
+    <ul class="skill-grid">
+      <li><img src="assets/img/icons/html.svg" alt="HTML">HTML5</li>
+      <li><img src="assets/img/icons/css.svg" alt="CSS">CSS3</li>
+      <li><img src="assets/img/icons/js.svg" alt="JavaScript">JavaScript</li>
+      <li><img src="assets/img/icons/java.svg" alt="Java">Java</li>
+      <li><img src="assets/img/icons/csharp.svg" alt="C#">C#</li>
+      <li><img src="assets/img/icons/net.svg" alt=".NET">.NET</li>
+      <li><img src="assets/img/icons/python.svg" alt="Python">Python</li>
+      <li><img src="assets/img/icons/sql.svg" alt="SQL">SQL</li>
+      <li><img src="assets/img/icons/drawio.svg" alt="Draw.io">Draw.io</li>
+    </ul>
+  </section>
 
-<section class="cta">
-  <h2>¿Quieres ver mi trabajo?</h2>
-  <a href="projects.html" class="btn-secondary">Ver proyectos</a>
-</section>
+  <!-- 💼 Proyecto destacado -->
+  <section class="projects-destacados">
+    <h2>Proyecto Destacado</h2>
+    <div class="proyecto">
+      <img src="assets/img/logohigh.png" alt="Proyecto HIGH" class="proyecto-img" />
+      <div class="proyecto-info">
+        <h3>Sistema Tienda HIGH</h3>
+        <p>Proyecto con diferentes menús por rol. Hecho en Visual Studio 2022 con C# Windows Forms .NET.</p>
+        <a href="projects.html#proyecto1" class="btn-primary">Ver más</a>
+      </div>
+    </div>
+  </section>
 
-<section id="contacto" class="contact">
-  <h2>Contacto</h2>
-  <form id="contact-form" novalidate>
-    <label>Nombre
-      <input type="text" id="nombre" name="nombre" required>
-      <span class="error" id="errorNombre"></span>
-    </label>
+  <!-- 📩 Contacto -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <form id="contact-form" action="https://formspree.io/f/mrbkowdo" method="POST">
+      <label>Nombre
+        <input type="text" name="nombre" required />
+      </label>
+      <label>Correo electrónico
+        <input type="email" name="email" required />
+      </label>
+      <label>Mensaje
+        <textarea name="mensaje" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Enviar</button>
+      <p class="success" id="successMsg"></p>
+    </form>
+  </section>
 
-    <label>Correo electrónico
-      <input type="email" id="correo" name="correo" required>
-      <span class="error" id="errorCorreo"></span>
-    </label>
+  <!-- 👣 Footer -->
+  <footer>
+    <div class="footer-text">© 2025 Richard Muñoz</div>
+    <div class="footer-icons">
+      <a href="https://github.com/KosmosHub/WindowsFormsTienda_High" target="_blank"><img src="assets/img/footer/github.svg" alt="GitHub" /></a>
+      <a href="https://www.linkedin.com/in/rxr-mf/" target="_blank"><img src="assets/img/footer/linkedin.svg" alt="LinkedIn" /></a>
+      <a href="https://www.instagram.com/paranoid_ssj" target="_blank"><img src="assets/img/footer/instagram.svg" alt="Instagram" /></a>
+    </div>
+  </footer>
 
-    <label>Mensaje
-      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-      <span class="error" id="errorMensaje"></span>
-    </label>
+  <!-- Scripts -->
+  <script>
+    const btnToggle = document.querySelectorAll("#modoOscuroToggle");
+    const iconoModo = document.getElementById("iconoModo");
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
-    <button type="submit" class="btn-primary">Enviar</button>
-    <p class="success" id="successMsg"></p>
-  </form>
-</section>
+    // Alternar modo oscuro
+    btnToggle.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const esOscuro = document.documentElement.classList.toggle("dark-mode");
+        localStorage.setItem("modoOscuro", esOscuro);
+        if (iconoModo) {
+          iconoModo.src = esOscuro ? "assets/img/sol.png" : "assets/img/luna.png";
+          iconoModo.alt = esOscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
+        }
+      });
+    });
 
-<footer>
-  © 2025 KosmosTM · <a href="https://github.com/Tomasito">GitHub</a> · 
-  <a href="https://www.linkedin.com/in/Tomasito">LinkedIn</a>
-</footer>
-
-<script src="assets/js/main.js" defer></script>
-<script src="assets/js/contact.js" defer></script>
+    // Menú móvil
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+  <script src="assets/js/contact.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
